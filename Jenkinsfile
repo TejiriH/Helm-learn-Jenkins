@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        KUBECONFIG = '/var/lib/jenkins/.kube/config'  // This is where we copied the config
+        KUBECONFIG = '/home/ubuntu/.kube/config'  // Adjust the path if necessary
     }
 
     triggers {
@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy with Helm') {
             steps {
                 script {
-                    sh 'helm upgrade --install my-webapp ./ --namespace default'
+                    sh '/usr/local/bin/helm upgrade --install my-webapp ./ --namespace default'
                 }
             }
         }

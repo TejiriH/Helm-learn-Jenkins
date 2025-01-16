@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy with Helm') {
             steps {
                 script {
-                    sh '/usr/local/bin/helm upgrade --install my-webapp ./webapp --namespace default'
+                    sh '/usr/local/bin/helm upgrade --install my-webapp ./ --namespace default'
                 }
             }
         }

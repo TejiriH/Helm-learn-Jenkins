@@ -1,6 +1,10 @@
 pipeline {
     agent any
+    
 
+    environment {
+        KUBECONFIG = '/home/ubuntu/.kube/config'  // Adjust the path if necessary
+    }
     triggers {
         pollSCM('* * * * *')  // Polls the repo every minute (Webhooks are preferred)
     }

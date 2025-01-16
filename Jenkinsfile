@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    
 
     environment {
-        KUBECONFIG = '/home/ubuntu/.kube/config'  // Adjust the path if necessary
+        KUBECONFIG = '/var/lib/jenkins/.kube/config'  // This is where we copied the config
     }
+
     triggers {
         pollSCM('* * * * *')  // Polls the repo every minute (Webhooks are preferred)
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy with Helm') {
             steps {
                 script {
-                    sh 'KUBECONFIG=/var/lib/jenkins/.kube/config helm upgrade --install my-webapp ./ --namespace default'
+                    sh 'helm upgrade --install my-webapp ./ --namespace default'
                 }
             }
         }

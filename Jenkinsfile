@@ -15,7 +15,7 @@ pipeline {
         stage('Check File Permissions') {
             steps {
                 script {
-                    sh 'ls -l /home/ubuntu/.kube/config'
+                    sh 'ls -l /home/ubuntu/.kube/'
                     sh 'ls -l /home/ubuntu/.minikube/profiles/minikube/*'
                 }
             }

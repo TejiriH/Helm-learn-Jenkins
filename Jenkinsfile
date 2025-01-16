@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy with Helm') {
             steps {
                 script {
-                    sh 'sudo /usr/local/bin/helm upgrade --install my-webapp ./ --namespace default'
+                    sh 'KUBECONFIG=/var/lib/jenkins/.kube/config helm upgrade --install my-webapp ./ --namespace default'
                 }
             }
         }

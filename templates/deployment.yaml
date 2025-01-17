@@ -19,4 +19,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 80
-
+          resources:
+            requests:
+              memory: "180Mi"
+              cpu: "120m"
+  

@@ -2,7 +2,7 @@ image:
   repository: tejirih/static-site
   tag: latest
 
-replicaCount: 2
+replicaCount: 3
 
 service:
   port: 80

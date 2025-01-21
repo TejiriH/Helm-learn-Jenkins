@@ -1,5 +1,5 @@
 image:
-  repository: tejirih/static-site
+  repository: public.ecr.aws/p3k7l9q4/static-websitel/my-webapp
   tag: latest
 
 replicaCount: 3
